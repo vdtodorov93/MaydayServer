@@ -15,4 +15,7 @@ module.exports = function(config) {
       console.log('Database error: ' + err);
     })
   });
+
+  //na6ivame nqkakuv user, da ima
+  require('../models/User').seed();
 };
