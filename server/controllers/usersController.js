@@ -6,6 +6,7 @@ module.exports = {
     //TODO: Implement this
   },
   signUp: function(req, res, next) {
+    console.log('REQ: ' + req.body);
     console.log('Registering user: ' + req.body.username);
     var username = req.body.username,
       password = req.body.password,
@@ -38,6 +39,8 @@ module.exports = {
             return res.send( {success: false, error: err.toString() });
           }
           console.log('DBuser: ' + dbUser);
+          res.send({ success: true });
+          res.end();
         })
       } else {
         console.log('User already exists');

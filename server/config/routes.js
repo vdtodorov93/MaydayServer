@@ -5,6 +5,7 @@ module.exports = function(app) {
     res.send('HELLO');
   });
 
-  app.get('/api/register', controllers.users.signUp);
-  app.get('/api/authenticate', controllers.users.authenticate);
+  app.post('/api/register', controllers.users.signUp);
+  app.post('/api/authenticate', controllers.users.authenticate);
+  app.post('/api/updatelocation', controllers.auth.authenticate, controllers.tracker.updateLocation);
 };
