@@ -18,4 +18,5 @@ module.exports = function(config) {
 
   //na6ivame nqkakuv user, da ima
   require('../models/User').seed();
+  require('../models/Message')();
 };

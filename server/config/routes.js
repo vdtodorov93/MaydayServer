@@ -12,4 +12,6 @@ module.exports = function(app) {
   app.post('/api/authenticate', controllers.users.authenticate);
   app.post('/api/updatelocation', controllers.auth.authenticate, controllers.tracker.updateLocation);
   app.post('/api/getnearest', controllers.auth.authenticate, controllers.tracker.getNearbyUsers);
+  app.post('/api/sendmessage', controllers.auth.authenticate, controllers.messages.sendMessage);
+  app.post('/api/getmessages', controllers.auth.authenticate, controllers.messages.getLastMessages);
 };

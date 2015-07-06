@@ -31,23 +31,7 @@ module.exports = {
         res.send(err);
         res.end();
       } else {
-        //var query = User.find({'geo': { $near: [user.geo[0], user.geo[1]], $maxDistance: dist }});
-//        var query = User.find(
-//          {'geo':
-//            { $geoWithin: {
-//                centerSphere: [
-//                  [
-//                    user.geo[0], //long
-//                    user.geo[1] //lat
-//                  ],
-//                  dist / EQUATORIAL_RADIUS
-//                ]
-//              }
-//            }
-//          });
-
         var query = User.where('geo').within({center: [user.geo[0], user.geo[1]], radius: dist / EQUATORIAL_RADIUS, spherical: true });
-
 
         query.exec(function(err, users) {
         if(err) {
