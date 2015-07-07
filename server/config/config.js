@@ -13,8 +13,7 @@ configs = {
   },
   production: {
     rootPath: rootPath,
-    //TODO: Make mongolab db and add connection string.
-    db: 'mongodb://',
+    db: 'mongodb://pesho:pesho@ds047782.mongolab.com:47782/mayday',
     port: process.env.PORT || 3000,
     env: env
   }
